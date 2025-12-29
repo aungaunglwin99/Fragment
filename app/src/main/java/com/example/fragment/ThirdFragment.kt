@@ -1,27 +1,17 @@
 package com.example.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 
 
-class ThirdFragment : Fragment() {
+class ThirdFragment : Fragment(R.layout.fragment_third) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_third, container, false)
-
+    override fun onViewCreated(v: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(v, savedInstanceState)
         val tvThird = v.findViewById<TextView>(R.id.tvThird)
-
         val userName = arguments?.getString("userName")
         tvThird.text = userName
-
-        return v
     }
 }
